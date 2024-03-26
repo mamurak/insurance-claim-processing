@@ -15,7 +15,7 @@ spec:
         command: ['sh', '-c', 'until nc -z -v -w30 $MINIO_ENDPOINT 9000; do echo "Waiting for Minio connection..."; sleep 2; done;']
         env:
         - name: MINIO_ENDPOINT
-          value: minio.ic-shared-minio.svc.cluster.local
+          value: minio-service.minio.svc.cluster.local
       containers:
       - name: add-images-to-bucket
         image: image-registry.openshift-image-registry.svc:5000/redhat-ods-applications/s2i-generic-data-science-notebook:1.2
@@ -24,7 +24,7 @@ spec:
         args:
         - -ec
         - |-
-          git clone https://github.com/rh-aiservices-bu/insurance-claim-processing.git
+          git clone https://github.com/mamurak/insurance-claim-processing.git
 
           cat << 'EOF' | python3
           import boto3, os, botocore
