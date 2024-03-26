@@ -96,6 +96,16 @@ spec:
           requests:
             cpu: 10m
             memory: 10Mi
+      - name: vllm
+        image: quay.io/rh-aiservices-bu/vllm-openai-ubi9@sha256:666198f643c145e4a95bfc98eb2685b8e12b8888ff0163373d3974c8270c718e
+        command: ["tail"]
+        args: ["-f", "/dev/null"]
+        resources:
+          limits:
+            memory: 20Mi
+          requests:
+            cpu: 10m
+            memory: 10Mi
 ---
 apiVersion: apps/v1
 kind: DaemonSet
