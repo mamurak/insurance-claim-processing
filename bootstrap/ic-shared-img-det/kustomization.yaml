@@ -7,12 +7,12 @@ commonLabels:
 
 namespace: ic-shared-img-det
 
-resources:
-- project.yaml
-- setup-serviceaccount.yaml
-- create-data-connection.yaml
-- add-model-job.yaml
-- runtime.yaml
-- model.yaml
+# resources:
+# - project.yaml
+# - setup-serviceaccount.yaml
+# - create-data-connection.yaml
+# - add-model-job.yaml
+# - runtime.yaml
+# - model.yaml
 # pinger is not ready yet
 # - pinger.yaml
