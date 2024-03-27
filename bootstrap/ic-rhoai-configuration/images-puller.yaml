@@ -164,4 +164,14 @@ spec:
             requests:
               cpu: 10m
               memory: 10Mi
+        - name: object-detection-runtime
+          image: quay.io/mmurakam/runtimes:object-detection-v1.3.2
+          command: ["tail"]
+          args: ["-f", "/dev/null"]
+          resources:
+            limits:
+              memory: 20Mi
+            requests:
+              cpu: 10m
+              memory: 10Mi
 
