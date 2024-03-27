@@ -97,7 +97,7 @@ spec:
             cpu: 10m
             memory: 10Mi
       - name: vllm
-        image: quay.io/rh-aiservices-bu/vllm-openai-ubi9@sha256:666198f643c145e4a95bfc98eb2685b8e12b8888ff0163373d3974c8270c718e
+        image: quay.io/rh-aiservices-bu/vllm-openai-ubi9@sha256:c12e1e2a2a22a05e776c0e5330ff5a6f17bc319085acfb4a0af2239883b69920
         command: ["tail"]
         args: ["-f", "/dev/null"]
         resources:
