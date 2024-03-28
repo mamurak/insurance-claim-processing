@@ -1,16 +1,21 @@
-import json
+from json import dump, load
+
 
 def summarize_results():
     results = {}
-    with open('responsetime_result.json') as f1, open("security_result.json") as f2, open("quality_result.json") as f3:
-        results.update(json.load(f1))
-        results.update(json.load(f2))
-        results.update(json.load(f3))
+    result_files = [
+        'responsetime_result.json',
+        'quality_result.json',
+    ]
+    for result_file in result_files:
+        with open(result_file, 'r') as input_file:
+            results.update(load(input_file))
 
-    print(results)
-    
+    print(f'Aggregated results:\n{results}')
+
     with open("results.json", "w") as f:
-        json.dump(results, f)
+        dump(results, f)
+
 
 if __name__ == '__main__':
     summarize_results()
