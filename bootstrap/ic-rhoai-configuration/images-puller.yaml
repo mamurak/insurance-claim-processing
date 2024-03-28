@@ -19,17 +19,7 @@ spec:
     spec:
       containers:
       - name: ic-workbench
-        image: image-registry.openshift-image-registry.svc:5000/redhat-ods-applications/ic-workbench:1.2
-        command: ["tail"]
-        args: ["-f", "/dev/null"]
-        resources:
-          limits:
-            memory: 20Mi
-          requests:
-            cpu: 10m
-            memory: 10Mi
-      - name: vscode
-        image: image-registry.openshift-image-registry.svc:5000/redhat-ods-applications/ic-workbench-vscode:2023c
+        image: quay.io/mmurakam/workbenches:insurance-claims-v0.1.0
         command: ["tail"]
         args: ["-f", "/dev/null"]
         resources:
@@ -56,8 +46,8 @@ spec:
         name: image-puller
     spec:
       containers:
-      - name: oauth-proxy
-        image: registry.redhat.io/openshift4/ose-oauth-proxy@sha256:4bef31eb993feb6f1096b51b4876c65a6fb1f4401fee97fa4f4542b6b7c9bc46
+      - name: storage-initializer
+        image: quay.io/modh/kserve-storage-initializer@sha256:ae57d82e1fd85135dd257cf6f4c9f5dfe7ac92cd6d6bb634f79999bafbd602ac
         command: ["tail"]
         args: ["-f", "/dev/null"]
         resources:
@@ -66,8 +56,8 @@ spec:
           requests:
             cpu: 10m
             memory: 10Mi
-      - name: model-server
-        image: quay.io/opendatahub/openvino_model_server@sha256:2cbe8a48ab0bc6fe7fb76919bf33253e83a6218a9c4b486b744c3dcf30679616
+      - name: tgis
+        image: quay.io/modh/text-generation-inference@sha256:e4d24fd401fd4eb89b49b4ab07e0c08389384d4a672b240e98a03ad7f9ef1c85
         command: ["tail"]
         args: ["-f", "/dev/null"]
         resources:
@@ -76,8 +66,8 @@ spec:
           requests:
             cpu: 10m
             memory: 10Mi
-      - name: runtime-adapter
-        image: registry.redhat.io/rhods/odh-modelmesh-runtime-adapter-rhel8@sha256:6bba39a3ab246803a1ab6fec1629246c10934faed3ed20add59aeb0945f29883
+      - name: queue-proxy
+        image: registry.redhat.io/openshift-serverless-1/serving-queue-rhel8@sha256:6494a92d822a6ae4ff730a0f0010a78f94b4f632b2a00f712870678c3688df4e
         command: ["tail"]
         args: ["-f", "/dev/null"]
         resources:
@@ -86,8 +76,8 @@ spec:
           requests:
             cpu: 10m
             memory: 10Mi
-      - name: modelmesh
-        image: registry.redhat.io/rhods/odh-modelmesh-rhel8@sha256:2977caf3d7914f9d9c407ad3e01d78f783202c358766b70fca342560e1afe3df
+      - name: istio-proxy
+        image: registry.redhat.io/openshift-service-mesh/proxyv2-rhel8@sha256:91d76a248eec9ddac000d36339df4ac6311e387bf32bb301c610ce4b93731766
         command: ["tail"]
         args: ["-f", "/dev/null"]
         resources:
@@ -98,6 +88,16 @@ spec:
             memory: 10Mi
       - name: vllm
         image: quay.io/rh-aiservices-bu/vllm-openai-ubi9@sha256:c12e1e2a2a22a05e776c0e5330ff5a6f17bc319085acfb4a0af2239883b69920
+        command: ["tail"]
+        args: ["-f", "/dev/null"]
+        resources:
+          limits:
+            memory: 20Mi
+          requests:
+            cpu: 10m
+            memory: 10Mi
+      - name: ovms
+        image: quay.io/modh/openvino_model_server@sha256:5d04d405526ea4ce5b807d0cd199ccf7f71bab1228907c091e975efa770a4908
         command: ["tail"]
         args: ["-f", "/dev/null"]
         resources:
@@ -166,6 +166,16 @@ spec:
               memory: 10Mi
         - name: object-detection-runtime
           image: quay.io/mmurakam/runtimes:object-detection-v1.3.2
+          command: ["tail"]
+          args: ["-f", "/dev/null"]
+          resources:
+            limits:
+              memory: 20Mi
+            requests:
+              cpu: 10m
+              memory: 10Mi
+        - name: object-detection-runtime
+          image: quay.io/mmurakam/runtimes:langchain-v0.1.1
           command: ["tail"]
           args: ["-f", "/dev/null"]
           resources:
