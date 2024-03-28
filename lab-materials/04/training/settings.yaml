@@ -1,0 +1,16 @@
+settings_version: 0.0.4
+datasets_dir: /datasets
+weights_dir: weights
+runs_dir: runs
+uuid: fe92887c90c6d1613d7b6a7fb006ade9d71279c7905233ae1dbd6c723f7480a7
+sync: true
+api_key: ''
+clearml: true
+comet: true
+dvc: true
+hub: true
+mlflow: true
+neptune: true
+raytune: true
+tensorboard: true
+wandb: true

@@ -49,4 +49,5 @@ package-lock.json
 # training stuff
 lab-materials/04/datasets/*
 lab-materials/04/runs/*
-
+lab-materials/04/training/datasets/*
+lab-materials/04/training/runs/*
