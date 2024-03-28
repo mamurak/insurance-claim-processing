@@ -5,7 +5,10 @@ from shutil import rmtree
 from boto3 import client
 
 
-def ingest_data(bucket_name='', bucket_folder='training_images/', data_folder='./data'):
+def ingest_data(
+        bucket_name='', bucket_folder='training_images/',
+        data_folder='./data'):
+
     _clean_folder(data_folder)
 
     print('Commencing data ingestion.')
