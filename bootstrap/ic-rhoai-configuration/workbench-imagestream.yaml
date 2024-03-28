@@ -34,8 +34,7 @@ spec:
         openshift.io/imported-from: quay.io/rh-aiservices-bu/rhoai-lab-insurance-claim-workbench
       from:
         kind: DockerImage
-        name: >-
-          quay.io/rh-aiservices-bu/rhoai-lab-insurance-claim-workbench:1.2
+        name: quay.io/mmurakam/workbenches:insurance-claims-v0.1.0
       importPolicy:
         importMode: Legacy
       referencePolicy:

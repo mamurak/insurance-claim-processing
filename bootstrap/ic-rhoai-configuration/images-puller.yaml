@@ -175,7 +175,7 @@ spec:
               cpu: 10m
               memory: 10Mi
         - name: object-detection-runtime
-          image: quay.io/mmurakam/runtimes:langchain-v0.1.1
+          image: quay.io/mmurakam/runtimes:langchain-v0.1.2
           command: ["tail"]
           args: ["-f", "/dev/null"]
           resources:

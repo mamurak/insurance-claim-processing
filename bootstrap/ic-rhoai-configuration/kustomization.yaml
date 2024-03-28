@@ -11,7 +11,7 @@ resources:
 # - ceph-rbd-set-default.yaml
 # wave 1
 - workbench-imagestream.yaml
-- workbench-vscode-is.yaml
+# - workbench-vscode-is.yaml
 - serving-runtime.yaml
 # - odhdashboardconfig.yaml
 # - accelerator-profile.yaml
