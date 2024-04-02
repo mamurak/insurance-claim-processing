@@ -5,7 +5,27 @@ So far, for this lab, we have used the model https://huggingface.co/mistralai/Mi
 
 In this exercise, we'll pitch it against a much smaller LLM called https://huggingface.co/google/flan-t5-small[flan-t5-small,window=_blank].
 
+== Deploying the model
 
-From the `insurance-claim-processing/lab-materials/03` folder, please open the notebook called `03-04-comparing-models.ipynb` and follow the instructions.
+The small flan-t5 model is already available in your Minio instance. In order to deploy it for real-time querying, head back to your Data Science Project and follow these steps:
+
+* In the bottom section (Models and model servers), select `Deploy model`.
+* In the model deployment form, enter the following details:
+** Model name: `flan-t5`
+** Serving runtime: `TGIS Standalone ServingRuntime for KServe`
+** Model framework: `pytorch`
+** Number of model server replicas: 1
+** Model server size: `Standard`
+** Accelerator: `None`
+** Select `Existing data connection` with
+*** name `text-generation` and
+*** path `models/flan-t5-small/1`.
+* Hit `Deploy`.
+
+OpenShift AI will now spawn the containerized model serving infrastructure and then download and host the model behind an HTTP interface. This should take less than a minute. Once the model server is ready, you will see a green check box icon in the model's `Status` column.
+
+Copy the model's `Inference endpoint` URL.
+
+From the `insurance-claim-processing/lab-materials/03` folder, please open the notebook called `03-04-comparing-models.ipynb`. Paste the inference endpoint URL of flan-t5 into the placeholder value of the `flan_t5_inference_url` parameter. Follow the instructions and run the notebook.
 
 When done, you can close the notebook and head to the next page.

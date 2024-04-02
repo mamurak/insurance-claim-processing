@@ -37,11 +37,8 @@ image::05/05-toggle-off-workbench.jpg[]
 [.bordershadow]
 image::05/stop-workbench.png[]
 
-- In the image section, change the image to `CUSTOM - VSCode for Insurance Claim Processsing Lab`:
-+
-[.bordershadow]
-image::05/05-change-to-vscode.jpg[]
-- Note that this is a Custom-built image added in this particular lab to illustrate the flexibility of the OpenShift AI platform. Not everyone wants to use Jupyter Notebooks for everything.
+- In the image section, change the image to `code-server`.
+- Note that using this image illustrates the flexibility of the OpenShift AI platform. Not everyone wants to use Jupyter Notebooks for everything.
 
 - Then click on `Update workbench` at the bottom of the page:
 +
@@ -68,5 +65,3 @@ image::05/trust-vscode.png[]
 image::05/app-code.png[]
 
 Of course, this is a complete VSCode environment, so you can configure it in the same way as you would do for a local VSCode installation. You can install extensions that will be persisted when you stop and restart the Workbench, you can configure your own keybindings, etc.
-
-The application has already been built as a container image that we are now ready to deploy using GitOps. You can head to the next section.

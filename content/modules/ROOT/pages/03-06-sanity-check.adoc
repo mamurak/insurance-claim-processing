@@ -3,7 +3,7 @@ include::_attributes.adoc[]
 
 == What will the pipeline do?
 To make sure that everything works as we would expect it to, and that the model has not been tampered with, we will create a sanity-check pipeline that tests the model through its endpoint. +
-We will test the response time, the response quality, and that the model hash has not changed. +
+We will test the response time and the response quality. +
 And to make sure it stays the same over time, we'll schedule that pipeline.
 
 == Deploy a sanity-check pipeline
@@ -20,21 +20,13 @@ Running it through Elyra is the same as doing an ad-hoc execution of the pipelin
 . Start by going to your running workbench
 . Navigate to the folder `insurance-claim-processing/lab-materials/03/06`
 . Open up the `sanity_check.pipeline` file
-. Here we can see that the pipeline consists of 3 checks:
+. Here we can see that the pipeline consists of two checks:
 .. response quality check
 .. response time check
-.. security check
 . Feel free to peek into each of the python files by double clicking on the nodes to see what they do. +
 . After the tests have been run, we have a final function that will summarize the results and log them.
 . To run the pipeline, press the Play button in the menu bar.
-+
-[.bordershadow]
-image::03/07-elyra-pipeline.png[elyra sanity pipeline]
-. in the popup, leave the name unchanged and click **OK**:
-+
-[.bordershadow]
-image::03/03-07-run-pipeline-ok.png[]
-
+. In the popup, enter Mistral's endpoint URL and click **OK**.
 . When you get a popup that says **Job submission to Data Science Pipelines succeeded**, click the link **Run details** to see how the pipeline is progressing.
 
 == Schedule execution

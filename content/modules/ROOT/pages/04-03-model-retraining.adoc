@@ -54,3 +54,7 @@ During training we export the trained model, after each epoch, to the /runs/dete
 
 Note:  In real world problems, you need to run many more epochs than we have shown here, and be prepared to wait hours or days until training finishes, and not a mere 16 minutes as we did in this example.
 ====
+
+== Re-train the model within a pipeline
+
+Notebooks are great for prototyping, but long-running processes like model training jobs are best executed as workflows or pipelines. Explore the contents of folder `03-training-pipeline`, which contains a pipeline version of the model re-training notebook.

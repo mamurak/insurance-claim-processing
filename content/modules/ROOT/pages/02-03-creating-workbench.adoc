@@ -3,7 +3,8 @@ include::_attributes.adoc[]
 
 == Launch a Workbench
 
-* Once the Data Connection and Pipeline Server are fully created
+We're now going to provision a workbench environment, in which you will interactively work on the lab exercises. To do this:
+
 * Create a workbench
 +
 [.bordershadow]
@@ -17,7 +18,9 @@ image::02/02-03-create-wb.png[]
 +
 [.bordershadow]
 image::02/02-02-launch-workbench-01.png[]
-* You should not need to modify any other Workbench settings (such as Storage)
+* You should not need to modify Storage.
+* Under `Data Connections`, choose `Use a data connection`, `Use existing data connection`, and select the `claims-images` data connection.
+* Hit `Create workbench`.
 * Wait for your workbench to be fully started
 * Once it is, click the **Open** Link to connect to it.
 +
@@ -52,7 +55,7 @@ image::02/git-clone-1.png[]
 [source,adoc]
 [subs=attributes+]
 ----
-{git-clone-repo-url}
+https://github.com/mamurak/insurance-claim-processing.git
 ----
 +
 [.bordershadow]
