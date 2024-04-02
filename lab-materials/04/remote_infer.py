@@ -1,14 +1,14 @@
 import cv2
 from requests import post
 from cv2 import dnn, getTextSize, imread, minMaxLoc, rectangle, putText, transpose
-from numpy import array, ndarray, 
+from numpy import array, ndarray, random
 
 
 CLASSES = {
     0: "moderate",
     1: "severe"
 }
-colors = np.random.uniform(0, 255, size=(len(CLASSES), 3))
+colors = random.uniform(0, 255, size=(len(CLASSES), 3))
 
 
 def preprocess(image_path):
@@ -54,7 +54,7 @@ def draw_bounding_box(img, class_id, confidence, x, y, x_plus_w, y_plus_h):
         (x, y),
         cv2.FONT_HERSHEY_SIMPLEX,
         0.5,
-        (255,255,255),
+        (255, 255, 255),
         1,
         cv2.LINE_AA
     )
@@ -130,7 +130,7 @@ def _unpack(response_item):
 def send_request(image, endpoint):
     payload = _serialize(image)
     raw_response = post(
-        endpoint, json = payload, verify=False
+        endpoint, json=payload, verify=False
     )
     try:
         response = raw_response.json()
