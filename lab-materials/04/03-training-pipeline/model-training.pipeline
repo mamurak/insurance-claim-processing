@@ -57,7 +57,7 @@
             "label": "",
             "ui_data": {
               "label": "data_ingestion.py",
-              "image": "/notebook/insurance-claims/workbench/static/elyra/python.svg",
+              "image": "/notebook/user0/my-workbench/static/elyra/python.svg",
               "x_pos": 404,
               "y_pos": 272,
               "description": "Run Python script"
@@ -134,7 +134,7 @@
             "label": "",
             "ui_data": {
               "label": "model_training.py",
-              "image": "/notebook/insurance-claims/workbench/static/elyra/python.svg",
+              "image": "/notebook/user0/my-workbench/static/elyra/python.svg",
               "x_pos": 671,
               "y_pos": 266,
               "description": "Run Python script"
@@ -199,7 +199,7 @@
             "label": "",
             "ui_data": {
               "label": "model_conversion.py",
-              "image": "/notebook/insurance-claims/workbench/static/elyra/python.svg",
+              "image": "/notebook/user0/my-workbench/static/elyra/python.svg",
               "x_pos": 895,
               "y_pos": 267,
               "description": "Run Python script"
@@ -259,22 +259,22 @@
               "kubernetes_secrets": [
                 {
                   "env_var": "AWS_SECRET_ACCESS_KEY",
-                  "name": "aws-connection-models",
+                  "name": "aws-connection-object-detection",
                   "key": "AWS_SECRET_ACCESS_KEY"
                 },
                 {
                   "env_var": "AWS_ACCESS_KEY_ID",
-                  "name": "aws-connection-models",
+                  "name": "aws-connection-object-detection",
                   "key": "AWS_ACCESS_KEY_ID"
                 },
                 {
                   "env_var": "AWS_S3_BUCKET",
-                  "name": "aws-connection-models",
+                  "name": "aws-connection-object-detection",
                   "key": "AWS_S3_BUCKET"
                 },
                 {
                   "env_var": "AWS_S3_ENDPOINT",
-                  "name": "aws-connection-models",
+                  "name": "aws-connection-object-detection",
                   "key": "AWS_S3_ENDPOINT"
                 }
               ],
@@ -286,7 +286,7 @@
             "label": "",
             "ui_data": {
               "label": "model_upload.py",
-              "image": "/notebook/insurance-claims/workbench/static/elyra/python.svg",
+              "image": "/notebook/user0/my-workbench/static/elyra/python.svg",
               "x_pos": 1106,
               "y_pos": 269,
               "description": "Run Python script"
@@ -339,13 +339,13 @@
           "name": "model-training",
           "runtime": "Data Science Pipelines",
           "pipeline_defaults": {
-            "kubernetes_shared_mem_size": {},
             "kubernetes_pod_labels": [],
+            "kubernetes_pod_annotations": [],
             "mounted_volumes": [],
             "kubernetes_tolerations": [],
-            "kubernetes_pod_annotations": [],
-            "kubernetes_secrets": [],
+            "kubernetes_shared_mem_size": {},
             "env_vars": [],
+            "kubernetes_secrets": [],
             "runtime_image": "quay.io/mmurakam/runtimes:object-detection-v1.3.2"
           },
           "pipeline_parameters": [
